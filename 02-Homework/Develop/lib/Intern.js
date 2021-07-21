@@ -1,24 +1,18 @@
 // TODO: Write code to define and export the Intern class.  HINT: This class should inherit from Employee.
-inquirer.prompt(
-    [
-        {
-            type: `input`,
-            message: `what is your name?`,
-            name: `name`,
-        },
-        {
-            type: `input`,
-            message: `what is your id?`,
-            name: `id`,
-        },
-        {
-            type: `input`,
-            message: `what is your email?`,
-            name: `email`,
-        },
-        {
-            type: `input`,
-            message: `what is your school?`,
-            name: `school`,
-        },
-    ]);
+const Employee = require("./Employee");
+
+class Intern extends Employee {
+    constructor(name, id, email, school){
+        super (name, id, email);
+        this.school = school;
+    }
+
+    getSchool(){
+        return this.school;
+    }
+    getRole(){
+        return Intern.name; 
+    }
+}
+
+module.exports = Intern; 

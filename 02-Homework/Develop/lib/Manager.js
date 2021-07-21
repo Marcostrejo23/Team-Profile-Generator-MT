@@ -1,24 +1,18 @@
 // TODO: Write code to define and export the Manager class. HINT: This class should inherit from Employee.
-inquirer.prompt(
-    [
-        {
-            type: `input`,
-            message: `what is your name?`,
-            name: `name`,
-        },
-        {
-            type: `input`,
-            message: `what is your id?`,
-            name: `id`,
-        },
-        {
-            type: `input`,
-            message: `what is your email?`,
-            name: `email`,
-        },
-        {
-            type: `input`,
-            message: `what is your office number?`,
-            name: `officeNum`,
-        },
-    ]);
+const Employee = require("./Employee");
+
+class Manager extends Employee {
+    constructor (name, id, email, officeNumber){
+        super(name, id, email);
+        this.officeNumber = officeNumber; 
+    }
+
+    getofficeNumber(){
+        return this.officeNumber;
+    }
+    getRole(){
+        return Manager.name;
+    }
+}
+
+module.exports = Manager;

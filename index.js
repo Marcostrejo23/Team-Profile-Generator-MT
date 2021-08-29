@@ -59,6 +59,7 @@ function createMember(){
             positionData = "office number";
         }
         inquirer.prompt([
+           {
             type: "input",
             message: `Enter the member's ${positionData}`,
             name: "positionData",
@@ -67,8 +68,44 @@ function createMember(){
                     if(isNaN(parseInt(data))){
                         return "a number is required"
                     }
+                    return true 
                 }
+                return true 
             }
-        ])
+        },
+        {
+            type: "confirm",
+            message: "Are there more members to introduce?",
+            name: "more"
+        }
+        ]).then(function({positionData, more}){
+            let teamMember;
+            if(role ==="manager"){
+                teamMember= new Manager(name, id, email, positionData)
+            }else if(role==="engineer"){
+                teamMember= new Engineer(name,id,email,positionData)
+            }else{
+                teamMember = new Intern(name,id,email,positionData)
+            }
+            team.push(teamMember)
+            if(more===true){
+                createMember()
+            }else{
+                let str = generateHtml(team)
+                createHtml(str)
+            }
+        })
     })
 }
+
+function createHtml(str){
+    fs.writeFile("./output/index.html", str, err=>{
+        if(err) throw err
+        console.log("Generated HTML File")
+    })
+}
+function init(){
+    createMember()
+}
+
+init()

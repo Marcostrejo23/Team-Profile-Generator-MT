@@ -9,7 +9,7 @@ const createTeam = team =>{
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item bg-secondary text-blue">ID: ${manager.getId()}</li>
+                <li class="list-group-item bg-secondary text-blue">ID: ${manager.getid()}</li>
                 <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${manager.getEmail()}" class="text-blue">${manager.getEmail()}</a></li>
                 <li class="list-group-item bg-secondary text-blue">Office number: ${manager.getofficeNumber()}</li>
             </ul>
@@ -27,7 +27,7 @@ const createTeam = team =>{
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item bg-secondary text-blue">ID: ${engineer.getId()}</li>
+                <li class="list-group-item bg-secondary text-blue">ID: ${engineer.getid()}</li>
                 <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${engineer.getEmail()}" class="text-blue">${engineer.getEmail()}</a></li>
                 <li class="list-group-item bg-secondary text-blue">Github: ${engineer.getGitHub()}</li>
             </ul>
@@ -44,7 +44,7 @@ const createTeam = team =>{
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item bg-secondary text-blue">ID: ${intern.getId()}</li>
+                <li class="list-group-item bg-secondary text-blue">ID: ${intern.getid()}</li>
                 <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${intern.getEmail()}" class="text-blue">${intern.getEmail()}</a></li>
                 <li class="list-group-item bg-secondary text-blue">School: ${intern.getSchool()}</li>
             </ul>

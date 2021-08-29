@@ -1,7 +1,7 @@
 const inquirer = require("inquirer")
 const jest = require("jest")
 const fs = require("fs")
-const generateHtml = require("./utils/generateHtml");
+const createHtml = require("./util/createHtml");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern")
@@ -91,14 +91,14 @@ function createMember(){
             if(more===true){
                 createMember()
             }else{
-                let str = generateHtml(team)
-                createHtml(str)
+                let str = createHtml(team)
+                writeHtml(str)
             }
         })
     })
 }
 
-function createHtml(str){
+function writeHtml(str){
     fs.writeFile("./output/index.html", str, err=>{
         if(err) throw err
         console.log("Generated HTML File")

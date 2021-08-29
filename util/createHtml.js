@@ -5,7 +5,7 @@ const createTeam = team =>{
         <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${manager.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getPosition()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -23,7 +23,7 @@ const createTeam = team =>{
         <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getPosition()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -40,7 +40,7 @@ const createTeam = team =>{
         <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getPosition()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -54,9 +54,9 @@ const createTeam = team =>{
     };
     const html = [];
 
-    html.push(team.filter(employee=>employee.getRole()==manager)).map(manager =>createManager(manager));
-    html.push(team.filter(employee=>employee.getRole()==engineer)).map(engineer =>createEngineer(engineer));
-    html.push(team.filter(employee=>employee.getRole()==intern)).map(intern =>createIntern(intern));
+    html.push(team.filter(employee=>employee.getPosition()==manager)).map(manager =>createManager(manager));
+    html.push(team.filter(employee=>employee.getPosition()==engineer)).map(engineer =>createEngineer(engineer));
+    html.push(team.filter(employee=>employee.getPosition()==intern)).map(intern =>createIntern(intern));
     return html.join("");
 };
 

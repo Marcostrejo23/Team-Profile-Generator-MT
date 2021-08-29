@@ -11,7 +11,7 @@ const createTeam = team =>{
             <ul class="list-group">
                 <li class="list-group-item bg-secondary text-blue">ID: ${manager.getId()}</li>
                 <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${manager.getEmail()}" class="text-blue">${manager.getEmail()}</a></li>
-                <li class="list-group-item bg-secondary text-blue">Office number: ${manager.getOfficeNumber()}</li>
+                <li class="list-group-item bg-secondary text-blue">Office number: ${manager.getofficeNumber()}</li>
             </ul>
         </div>
     </div>

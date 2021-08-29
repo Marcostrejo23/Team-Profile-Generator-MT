@@ -41,7 +41,7 @@ function createMember(){
     {
         type: "input",
         message: "What is the member's id?",
-        name: "Id",
+        name: "id",
         validate: function(data){
             if (isNaN(parseInt(data))){
                 return "An Id must be a number"

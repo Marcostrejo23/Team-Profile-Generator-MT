@@ -9,7 +9,7 @@ let team = [];
 
 
 function createMember(){
-    inquirer.prompt([
+    return inquirer.prompt([
         {
         type: "input",
         message: "what is the member's name?",
@@ -53,7 +53,7 @@ function createMember(){
         let positionData = "";
         if (position === "engineer"){
             positionData = "GitHub username";
-        }else if (positionData === intern){
+        }else if (position === "intern") {
             positionData = "school name";
         }else {
             positionData = "office number";
@@ -109,3 +109,50 @@ function init(){
 }
 
 init()
+
+
+const managerQ = () =>{
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the manager's name?",
+            name: "managerName"
+        },
+        {
+            type: "input",
+            message: "What is the manager's id?",
+            name: "managerId",
+            validate: managerId => {
+                if(isNaN(managerId)) {
+                    return "an id must be a number";
+                } else {
+                    return true;
+                }
+        },
+    },
+    {
+        type: "input",
+        message: "what is the manager's email?",
+        name: "managerEmail",
+        validate: managerEmail => {
+            if(!managerEmail.includes('@')) {
+                return "That is not a valid email";
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        type: "input",
+        message: "What is the manager's office number?",
+        name: "officeNum",
+        validate: officeNum => {
+            if(isNaN(officeNum)) {
+                return "Please enter a number";
+            } else {
+                return true;
+            }
+        }
+    }
+    
+    ]);

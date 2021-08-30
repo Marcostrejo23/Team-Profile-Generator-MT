@@ -1,23 +1,21 @@
-
 const createTeam = team =>{
     const createManager = manager => {
         return `
-        <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">
+        <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-white" style="width: 15rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item bg-secondary text-blue">ID: ${manager.getid()}</li>
-                <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${manager.getEmail()}" class="text-blue">${manager.getEmail()}</a></li>
-                <li class="list-group-item bg-secondary text-blue">Office number: ${manager.getofficeNumber()}</li>
+                <li class="list-group-item bg-secondary text-yellow">ID: ${manager.getid()}</li>
+                <li class="list-group-item bg-secondary text-yellow">Email: <a href="mailto:${manager.getEmail()}" class="text-yellow">${manager.getEmail()}</a></li>
+                <li class="list-group-item bg-secondary text-yellow">Office number: ${manager.getofficeNumber()}</li>
             </ul>
         </div>
     </div>
         `;
     };
-
     const createEngineer = engineer => {
         return `
         <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">

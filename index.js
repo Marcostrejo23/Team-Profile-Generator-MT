@@ -187,4 +187,48 @@ const continueQ= () =>{
 
 }
 
-const engineerQ
+const engineerQ =()=>{
+    return inquirer.prompt([
+
+ {
+            type: "input",
+            message: "What is your name?",
+            name: "engineerName"
+        },
+        {
+            type: "input",
+            message: "What is your id?",
+            name: "engineerId",
+            validate: function (input) {
+                if(isNaN(input)) {
+                    return "Please enter a number";
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: "input",
+            message: "What is your email?",
+            name: "engineerEmail",
+            validate: function (input) {
+                if(!input.includes('@')) {
+                    return "Please enter a valid email";
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: "input",
+            message: "What is your engineer's GitHub username?",
+            name: "github"
+        }
+    ])
+    .then(answers => {
+        const {engineerName, engineerId, engineerEmail, github} = answers;
+        const engineer = new Engineer (engineerName, engineerId, engineerEmail, github);
+        team.push(engineer);
+        continueQ();
+    })
+}; 

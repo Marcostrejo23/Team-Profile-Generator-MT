@@ -181,6 +181,7 @@ const continueQ= () =>{
 
            case "I don't want to add any more members at this time.":
                let data = createHtml(team);
+               writeHtml(data);
                break;
        }
    })
@@ -225,8 +226,8 @@ const engineerQ =()=>{
             name: "github"
         }
     ])
-    .then(answers => {
-        const {engineerName, engineerId, engineerEmail, github} = answers;
+    .then(answer => {
+        const {engineerName, engineerId, engineerEmail, github} = answer;
         const engineer = new Engineer (engineerName, engineerId, engineerEmail, github);
         team.push(engineer);
         continueQ();
@@ -269,8 +270,8 @@ const internQ = () => {
             name: "schoolName"
         }
     ])
-    .then(answers => {
-        const {internName, internId, internEmail, schoolName} = answers;
+    .then(answer => {
+        const {internName, internId, internEmail, schoolName} = answer;
         const intern = new Intern (internName, internId, internEmail, schoolName);
         team.push(intern);
         continueQ();

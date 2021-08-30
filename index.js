@@ -156,7 +156,7 @@ const managerQ = () =>{
     }
     ]).then(answer =>{
         const {managerId, managerName,managerEmail,officeNum} =answer;
-        const manager = new Manager{managerId, managerName,managerEmail,officeNum}
+        const manager = new Manager(managerId, managerName,managerEmail,officeNum);
         team.push(manager);
     })
 };
@@ -232,3 +232,60 @@ const engineerQ =()=>{
         continueQ();
     })
 }; 
+const internQ = () => {
+    return inquirer.prompt ([
+        {
+            type: "input",
+            message: "What is your name?",
+            name: "internName"
+        },
+        {
+            type: "input",
+            message: "What is your id?",
+            name: "internId",
+            validate: function (input) {
+                if(isNaN(input)) {
+                    return "That is not a number!";
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: "input",
+            message: "What is your intern's email?",
+            name: "internEmail",
+            validate: function (input) {
+                if(!input.includes('@')) {
+                    return "That is not an email";
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: "input",
+            message: "Where do you go to school",
+            name: "schoolName"
+        }
+    ])
+    .then(answers => {
+        const {internName, internId, internEmail, schoolName} = answers;
+        const intern = new Intern (internName, internId, internEmail, schoolName);
+        team.push(intern);
+        continueQ();
+    })
+} 
+
+function writeHtml(data){
+    fs.writeFile("./output/index.html",data, err =>{
+        if (err){
+            console.log(err);
+        return;
+        }else {
+            console.log("success!")
+        }
+    })
+};
+
+managerQ().then(continueQ)

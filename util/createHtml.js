@@ -1,16 +1,16 @@
 const createTeam = team =>{
     const createManager = manager => {
         return `
-        <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-white" style="width: 15rem;">
+        <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-primary" style="width: 16rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${manager.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-3"></i>${manager.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item bg-secondary text-yellow">ID: ${manager.getid()}</li>
-                <li class="list-group-item bg-secondary text-yellow">Email: <a href="mailto:${manager.getEmail()}" class="text-yellow">${manager.getEmail()}</a></li>
-                <li class="list-group-item bg-secondary text-yellow">Office number: ${manager.getofficeNumber()}</li>
+                <li class="list-group-item bg-success text-yellow">ID: ${manager.getid()}</li>
+                <li class="list-group-item bg-success text-yellow">Email: <a href="mailto:${manager.getEmail()}" class="text-yellow">${manager.getEmail()}</a></li>
+                <li class="list-group-item bg-success text-yellow">Office number: ${manager.getofficeNumber()}</li>
             </ul>
         </div>
     </div>
@@ -18,7 +18,7 @@ const createTeam = team =>{
     };
     const createEngineer = engineer => {
         return `
-        <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">
+        <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 16rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${engineer.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
@@ -42,9 +42,9 @@ const createTeam = team =>{
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item bg-secondary text-blue">ID: ${intern.getid()}</li>
-                <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${intern.getEmail()}" class="text-blue">${intern.getEmail()}</a></li>
-                <li class="list-group-item bg-secondary text-blue">School: ${intern.getSchool()}</li>
+                <li class="list-group-item bg-danger text-blue">ID: ${intern.getid()}</li>
+                <li class="list-group-item bg-danger text-blue">Email: <a href="mailto:${intern.getEmail()}" class="text-blue">${intern.getEmail()}</a></li>
+                <li class="list-group-item bg-danger text-blue">School: ${intern.getSchool()}</li>
             </ul>
         </div>
     </div>
@@ -72,11 +72,11 @@ const createHtml = (team)=>{
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
     </head>
-    <body class="bg-danger">
+    <body class="bg-success">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 jumbotron mb-3 team-heading bg-primary">
-                    <h1 class="text-center text-white">My Team</h1>
+                <div class="col-12 jumbotron mb-4 team-heading bg-info">
+                    <h1 class="text-center text-dark">My Team</h1>
                 </div>
             </div>
         </div>

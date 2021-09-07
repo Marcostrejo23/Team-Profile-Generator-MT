@@ -17,17 +17,21 @@ const createTeam = team =>{
         `;
     };
     const createEngineer = engineer => {
+        console.log(engineer)
+        console.log('=======')
+        console.log(engineer)
+        console.log('=====')
         return `
         <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 16rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-glasses mr-3"></i>${engineer.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item bg-secondary text-blue">ID: ${engineer.getid()}</li>
                 <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${engineer.getEmail()}" class="text-blue">${engineer.getEmail()}</a></li>
-                <li class="list-group-item bg-secondary text-blue">Github: ${engineer.getGitHub()}</li>
+                <li class="list-group-item bg-secondary text-blue">Github: ${engineer.get.Github()}</li>
             </ul>
         </div>
     </div>
@@ -38,7 +42,7 @@ const createTeam = team =>{
         <div class="card employee-card m-3 col-lg-6 col-sm-12 bg-dark" style="width: 15rem;">
         <div class="card-header bg-secondary">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-user-graduate mr-3">${intern.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">

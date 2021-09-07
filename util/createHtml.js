@@ -31,7 +31,7 @@ const createTeam = team =>{
             <ul class="list-group">
                 <li class="list-group-item bg-secondary text-blue">ID: ${engineer.getid()}</li>
                 <li class="list-group-item bg-secondary text-blue">Email: <a href="mailto:${engineer.getEmail()}" class="text-blue">${engineer.getEmail()}</a></li>
-                <li class="list-group-item bg-secondary text-blue">Github: ${engineer.get.Github()}</li>
+                <li class="list-group-item bg-secondary text-blue">Github: ${engineer.getGithub()}</li>
             </ul>
         </div>
     </div>

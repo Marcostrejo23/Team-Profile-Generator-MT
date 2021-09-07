@@ -12,6 +12,10 @@ Installation:
 
 after forking this repository run npm i to install dependencies. 
 
+Walk through video: 
+
+https://www.youtube.com/watch?v=FXQ1sIkrmgI
+
 License: 
 
 This project uses an MIT license. 

@@ -4,6 +4,10 @@
 
 This project generates HTML that displays team member information. After answering prompts, the user can fill out whether they are a manager, engineer, or an intern. Based off the user's response to the prompts, they will be asked to include their github username, office number, or school they attend. Once you finish adding members, the html will be created. 
 
+## Screenshots
+
+![Screen Shot 2022-02-06 at 2 49 39 PM](https://user-images.githubusercontent.com/85652700/152704871-43970ece-7436-40f4-bf0a-a54e535aa254.png)
+
 ## tests: 
 
 Run npm test to make sure your .js files are working. 
